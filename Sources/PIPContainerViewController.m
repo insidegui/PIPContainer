@@ -133,4 +133,9 @@
     }
 }
 
+- (BOOL)isActive
+{
+    return _isInPip;
+}
+
 @end

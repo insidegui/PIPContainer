@@ -31,5 +31,8 @@
 /// Set this property so the PiP panel reflects the current state when presented
 @property (nonatomic, assign, getter=isPlaying) BOOL playing;
 
+/// Whether the PIP is currently presenting its child view controller in picture-in-picture
+@property (nonatomic, readonly, getter=isActive) BOOL active;
+
 @end
 
