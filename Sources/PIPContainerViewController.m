@@ -33,7 +33,7 @@
         [self.pip dismissViewController:self.viewControllerForPip];
     } else {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.pipWillOpen();
+            if (self.pipWillOpen) self.pipWillOpen();
         });
         
         self.viewControllerForPip = self.childViewControllers.firstObject;
@@ -93,7 +93,7 @@
 {
     if (self.pipWillClose) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.pipWillClose();
+            if (self.pipWillClose) self.pipWillClose();
         });
     }
     
@@ -110,7 +110,7 @@
     
     if (self.pipDidClose) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.pipDidClose();
+            if (self.pipDidClose) self.pipDidClose();
         });
     }
 }
@@ -119,7 +119,7 @@
 {
     if (self.pipDidPlay) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.pipDidPlay();
+            if (self.pipDidPlay) self.pipDidPlay();
         });
     }
 }
@@ -128,7 +128,7 @@
 {
     if (self.pipDidPause) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.pipDidPause();
+            if (self.pipDidPause) self.pipDidPause();
         });
     }
 }
